@@ -50,6 +50,7 @@ let app = {
             //if they actually typed something other than <enter>
             let url= app.baseURL+"search/movie?api_key=" + APIKEY;
             url += "&query=" + app.INPUT.value;
+            console.log(url);
 
             
             fetch(url)
@@ -74,8 +75,7 @@ let app = {
         let h2=document.createElement('h2');
         df.appendChild(h2);
         h2.className='head';
-        h2.textContent='There were '+movies.total_results+' results found for: '+app.INPUT.value;
-        
+        h2.textContent='There were '+movies.results.length+' results found for: '+app.INPUT.value;  
         let movieResults=movies.results;
         movieResults.forEach((movie)=>{
             let searchDiv=document.createElement('div');
@@ -108,13 +108,12 @@ let app = {
     getRecommend: function(recommend){
         let movie_id=recommend.currentTarget.getAttribute('data-movie');
         let url=app.baseURL+'movie/'+movie_id+'/recommendations?api_key='+APIKEY;
-        
+        let sr = document.querySelector('#search-results .content');
         fetch(url)
         .then(response=>response.json())
         .then((data)=>{
             console.log(data);
              if(data.results==0){
-            let sr = document.querySelector('#search-results .content');
             sr.innerHTML='';
             let error=document.createElement('p');
             error.textContent='Sorry! There were no recommendations found for this title';
