@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee|Open+Sans|Spectral+SC');
+*{
+    line-height: 2rem;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+   
+}
+.mid{
+    width:80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    margin: 0 auto;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-right: 5rem solid #6BFF73;
+    border-left: 5rem solid #6BFF73; 
+    background-color: #6BFF73;
+    
+    
+}
+#search-input{
+    width: 70%;
+    height: 4rem;
+    text-align: center;
+    font-size: 2rem;
+}
+#search-button{
+    order: 1;
+    width: 15%;
+    height: 4.0rem;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    background-color: white;    
+}
+#back-button{
+    width: 15%;
+    height: 4.0rem;
+    padding-right: -2rem;
+    border-bottom-left-radius: 5%;
+    border-top-left-radius: 5%;
+}
+.attribution{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 2rem;
+    clear: both;
+    transition: transform 1s ease-in-out;
+}
+.attribution:hover{
+    transform: rotateY(180deg);
+}
+.loading.not{
+    display:none;
+}
+.img1{
+    padding: .5rem 1rem;
+    height: 300px;
+}
+.movie{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    flex-wrap: nowrap;
+    border: 0.15rem solid gray;
+    border-bottom-left-radius: 5px;
+    height: 400px;
+    box-shadow: 5px 5px 15px gray;
+    float: right;
+    margin-right: 1rem;    
+}
+.movie .text{
+    background-color: black;
+    text-shadow: 0px 0px 10px #6BFF73;
+    font-size: 1.2rem;
+    color: white;
+    visibility: hidden;
+}
+.movie:hover .text{
+    visibility: visible;
+    
+}
+.title_overview {
+    overflow:scroll;
+}
+.title_overview h2{
+    font-family: 'Spectral Sc', serif;
+}
+.title_overview .oView{
+    font-family: 'Open Sans', sans-serif;
+    padding-right: .5rem;
+}
+.page{
+    padding-right: 245px;
+}
+.head{
+    text-align: center;
+    background-color: white;
+    font-family: 'bungee', sans-serif;
+    text-shadow: 25px 5px 5px #6BFF73;
+}
+.totalResults{
+    font-family: 'bungee', sans-serif;
+}
+@media screen and (min-width )
