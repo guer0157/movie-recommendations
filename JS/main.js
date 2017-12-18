@@ -114,10 +114,14 @@ let app = {
         .then((data)=>{
             console.log(data);
              if(data.results==0){
-            alert("Sorry, there are no recommendations for this title");
+            let sr = document.querySelector('#search-results .content');
+            sr.innerHTML='';
+            let error=document.createElement('p');
+            error.textContent='Sorry! There were no recommendations found for this title';
+            sr.appendChild(error);
+            sr.className='head';
         }else{
             console.log(movie_id);
-            let sr=document.querySelector('#search-results .content');
             sr.innerHTML="";
             app.showRecommend(data);
             
